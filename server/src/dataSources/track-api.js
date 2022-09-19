@@ -1,4 +1,4 @@
-const {RESTDataSource} = require('apollo-datasource-rest');
+const { RESTDataSource } = require('apollo-datasource-rest');
 
 class TrackAPI extends RESTDataSource {
   constructor() {
@@ -12,6 +12,14 @@ class TrackAPI extends RESTDataSource {
 
   getAuthor(authorId) {
     return this.get(`author/${authorId}`);
+  }
+
+  getTrack(trackId) {
+    return this.get(`track/${trackId}`)
+  }
+
+  getTrackModules(trackId) {
+    return this.get(`track/${trackId}/modules`)
   }
 }
 
